@@ -1,0 +1,91 @@
+CREATE TABLE answers(row_id INT, qid INT,i INT,qs INT,qt INT,qvc INT,qac INT, aid INT, j INT, aas INT, at INT,tags STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/answers.csv' INTO TABLE answers;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE badges(row_id INT, badges_id INT,Id INT,UserId INT,Name STRING, Ddate STRING, Class INT, TagBased INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/badges.csv' INTO TABLE badges;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE comments(row_id INT, comments_id INT,Id INT,PostId INT,Score INT, CreationDate STRING, UserId INT, UserDisplayName STRING,Text STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/comments.csv' INTO TABLE comments;
+
+-----------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE postHistory(row_id INT, posthistory_id INT,Id INT,PostHistoryTypeId INT,PostId INT,RevisionGUID STRING, CreationDate STRING, UserId INT,userDisplayName STRING,Comment STRING,Text STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/postHistory.csv' INTO TABLE postHistory;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE postLinks(row_id INT, postlinks_id INT,Id INT,CreationDate STRING,PostId INT,RelatedPostId INT,LinkTypeId INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/postLinks.csv' INTO TABLE postLinks;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE posts(row_id INT,posts_id INT,Id INT, postType_id INT,CreationDate STRING,Score INT,ViewCount INT,OwnerUserId INT,LastActivityDate STRING,Tags STRING, AnswerCount INT,CommentCount INT,FavouriteCount INT,AcceptedAnswerId INT,LastEditorUserId INT,LastEditDate STRING,ParentId INT,CommunityOwnedDate STRING,ClosedDate STRING,OwnerDisplayName STRING,LastEditorDisplayName STRING,Title STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/posts.csv' INTO TABLE posts;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE tags(Id INT,Count INT,ExcerptPostId INT,WikiPostId INT,TagName STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/tags.csv' INTO TABLE tags;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE users(row_id INT, users_id INT,Id INT,Reputation INT,CreationDate STRING, DisplayName STRING,LastAccessDate STRING,WebsiteUri STRING,Views INT,UpVotes INT, DownVotes INT,Age INT,AccountId INT,Location STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/users.csv' INTO TABLE users;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE votes(row_id INT, votes_id INT,Id INT,PostId INT,VoteTypeId INT,CreationDate STRING,UserId INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+TBLPROPERTIES("skip.header.line.count"="1");
+
+LOAD DATA LOCAL INPATH '/home/hduser1/finalCSV/votes.csv' INTO TABLE votes;
+
+-----------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
